@@ -1,0 +1,10 @@
+mixin author
+	- var $ = attributes
+	- var user = $users[$.user]
+
+	a.author(href="/folio.html")
+		img.avatar(src="img/demo/masters/#{user.img}.jpg")
+		
+		div
+			.author-name= user.name
+			.author-city= user.city

@@ -1,0 +1,49 @@
+include index/discover-section
+
+extends ../layouts/application
+
+block mainNav
+	+main-nav(large= true)
+
+block mainContent
+	+discover-section(title="Сегодня")
+		+discover(type="doubleup")
+			+showcase(user="0")
+				+photo(photo="1")
+
+			+showcase(user="1")
+				+photo(photo="2")
+
+		+discover(type="solo")
+			+showcase(user="2")
+				+photo(photo="3")
+					
+	
+	+discover-section(title="Вчера")
+		+discover(type="stacked")
+			+showcase(user="1", badge="new")
+				+photo(photo="6")
+				.photo-stack
+					.photo-row.photo-row-auto
+						+photo-wrapped(photo="7")
+						+photo-wrapped(photo="8", orientation="horizontal")
+					.photo-row.photo-row-loose
+						+photo-wrapped(photo="9")
+						
+		+discover(type="doubleup")
+			+showcase(user="3")
+				+photo(photo="5")
+
+			+showcase(user="4")
+				+photo(photo="4")
+				
+		+discover(type="stacked")
+			+showcase(user="0", badge="new")
+				+photo(photo="4")
+				.photo-stack
+					.photo-row.photo-row-auto
+						+photo-wrapped(photo="1")
+						+photo-wrapped(photo="2", orientation="vertical")
+					.photo-row.photo-row-loose
+						+photo-wrapped(photo="3")
+	

@@ -1,0 +1,7 @@
+mixin main-nav
+	- var $ = attributes
+	
+	.main-nav(class= $.large ? 'large' : '')
+		a.logo(href="/index.html") Tooto
+		nav
+			a(href="/about.html") О проекте

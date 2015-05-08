@@ -1,0 +1,32 @@
+.discover
+	display: flex
+
+	.showcase + .showcase
+		margin-left: 60px
+	
+.discover-doubleup
+	.showcase:last-child
+		max-width: 30%
+	
+.discover-stacked
+	.showcase,
+	.showcase-content,
+	.photo-stack
+		width: 100%
+	
+	.showcase-content
+		display: flex
+		align-items: flex-start
+
+		> .photo
+			flex-shrink: 0
+			max-width: 100%
+	
+		.photo-row
+			height: 280px
+		
+		.photo-row + .photo-row
+			margin-top: $showcasePhotoMargin
+	
+	.photo-stack
+		margin-left: $showcasePhotoMargin

@@ -1,0 +1,43 @@
+mixin discover-section
+	- var $ = attributes
+
+	section.discover-section
+		header= $.title
+		
+		block
+		
+		
+mixin discover
+	- var $ = attributes
+
+	.discover(class='discover-#{$.type}')
+		block
+				
+				
+mixin showcase
+	- var $ = attributes
+	
+	article.showcase
+		if $.badge
+			.showcase-header
+				+author(user= $.user)
+				.badge(class="badge-#{$.badge}")
+		else
+			+author(user= $.user)
+			
+		.showcase-content
+			block
+		
+		
+mixin photo
+	- var $ = attributes
+	- var orient = $.orientation ? 'photo-'+$.orientation : ''
+	
+	img.photo(class= orient, src="img/demo/photos/#{$.photo}.jpg")
+	
+	
+mixin photo-wrapped
+	- var $ = attributes
+	
+	.photo-wrap
+		+photo(photo= $.photo, orientation= $.orientation || '')

@@ -1,0 +1,26 @@
+.author
+	align-items: flex-start
+	display: flex
+	font-size: 0.875rem
+	height: 3rem
+	line-height: 1.1
+	
+	.avatar
+		flex-shrink: 0
+		margin-right: 1em
+		max-height: 100%
+	
+	.author-name
+		display: inline
+	
+	.author-city
+		margin-top: 0.4em
+	
+	
+.author-name
+	@extend %link
+	@include underlined-text($blackText)
+	font-size: 1.4em
+
+.author-city
+	color: $gray
