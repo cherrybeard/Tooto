@@ -1,0 +1,57 @@
+extends ../layouts/application
+
+block mainContent
+	.folio
+		.folio-aside
+			+author(user="0", size="large")
+			.button Написать сообщение
+		
+		.folio-content
+			.folio-section.folio-section-doubleup
+				.folio-column
+					+photo(photo="1")
+					+photo(photo="2")
+					
+				.folio-column
+					+photo(photo="4")
+					+photo-wrapped(photo="5")
+					
+			.folio-section.folio-section-solo
+				+photo(photo="3")
+				
+			.folio-section.folio-section-doubleup
+				.folio-column
+					+photo-wrapped(photo="6")
+					
+				.folio-column
+					+photo(photo="7")
+					
+	.share
+		span Поделиться:
+		a.share-button.share-button-vk(href="") Вконтакте
+		a.share-button.share-button-twitter(href="") Twitter
+		a.share-button.share-button-facebook(href="") Facebook
+		
+block fullWidth
+	.suggestions
+		.main-wrap
+			.suggestion
+				+author(user="1")
+				.suggestion-content
+					+photo(photo="2")
+					
+					.photo-stack
+						.photo-row
+							+photo-wrapped(photo="3")
+							
+						.photo-row.photo-row-auto
+							+photo-wrapped(photo="5")
+							+photo-wrapped(photo="4")
+						
+			.suggestion
+				+author(user="2")
+				.suggestion-content
+					+photo(photo="6")
+					+photo(photo="7")
+					
+		+main-footer

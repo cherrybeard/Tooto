@@ -1,0 +1,112 @@
+$folioPhotosMargin: 40px
+
+.folio
+	display: flex
+
+	.folio-aside
+		width: 100%
+		
+	.folio-content
+		flex-shrink: 0
+		margin-left: 40px
+		width: 780px
+	
+.folio-aside
+	.button
+		margin: 2em auto 0
+		width: 80%
+	
+.folio-content
+	.folio-section + .folio-section
+		margin-top: $folioPhotosMargin
+	
+.folio-section
+	.photo
+		display: block
+		max-width: 100%
+	
+	.photo + .photo,
+	.photo + .photo-wrap
+		margin-top: $folioPhotosMargin
+	
+.folio-section-doubleup
+	display: flex
+	
+	.folio-column
+		overflow: hidden
+		width: 50%
+	
+		&:last-child
+			margin-left: $folioPhotosMargin
+	
+	.photo-wrap
+		overflow: visible
+		position: relative
+		
+		.photo
+			position: absolute
+	
+.share
+	@extend %nav-text
+	font-size: 2rem
+	text-align: center
+	padding: 96px 0
+
+.share-button
+	border-radius: 50%
+	display: inline-block
+	height: 64px
+	margin-left: 16px
+	overflow: hidden
+	text-indent: 100%
+	vertical-align: middle
+	width: 64px
+
+$networks: vk twitter facebook
+
+@each $network in $networks
+	.share-button-#{$network}
+		background-image: url(../img/share/#{$network}.svg)
+
+.suggestions
+	background: $grayLightest
+
+	.main-wrap
+		display: flex
+
+.suggestion
+	align-items: flex-start
+	display: flex
+	flex-direction: column
+	width: 50%
+
+	&:first-child
+		margin-right: 80px
+	
+	.suggestion-content
+		display: flex
+		margin-top: 16px
+	
+		> .photo
+			flex-shrink: 0
+			height: 300px
+	
+			&:not(:first-child)
+				max-height: 200px
+				margin-left: 20px
+	
+	.photo-stack
+		margin-left: 20px
+	
+	.photo-row
+		height: 140px
+	
+		&:first-child
+			margin-bottom: 20px
+	
+	.photo-row-auto
+		.photo-wrap:last-child
+			margin-left: 20px
+	
+	.photo
+		max-width: 100%

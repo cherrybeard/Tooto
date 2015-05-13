@@ -1,10 +1,21 @@
 mixin author
 	- var $ = attributes
 	- var user = $users[$.user]
-
-	a.author(href="/folio.html")
+	- var size = $.size || 'small'
+	- var tag = size == 'small' ? 'a' : 'div'
+	
+	#{tag}.author(href="/folio.html", class= size)
 		img.avatar(src="img/demo/masters/#{user.img}.jpg")
 		
 		div
-			.author-name= user.name
+			.author-name
+				span= user.name
+				= " "
+				span= user.lastname
+				
 			.author-city= user.city
+			
+			if size == 'large'
+				.author-specs
+					span визажист • стилист
+					span парикмахер 

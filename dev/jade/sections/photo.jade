@@ -1,0 +1,12 @@
+mixin photo
+	- var $ = attributes
+	- var orient = $.orientation ? 'photo-'+$.orientation : ''
+	
+	img.photo(class= orient, src="img/demo/photos/#{$.photo}.jpg")
+	
+	
+mixin photo-wrapped
+	- var $ = attributes
+	
+	.photo-wrap
+		+photo(photo= $.photo, orientation= $.orientation || '')
